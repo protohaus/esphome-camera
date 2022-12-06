@@ -24,6 +24,10 @@ substitutions:
   esp32cam_horizontal_mirror: "false"
   esp32cam_max_framerate: "1 fps"
   esp32cam_resolution: "1600x1200"
+  esp32cam_jpeg_quality: "10"
+  esp32cam_contrast: "0"
+  esp32cam_brightness: "2"
+  esp32cam_saturation: "0"  
   
   #bme280_1 settings
   bme280_1_name: bme280_1

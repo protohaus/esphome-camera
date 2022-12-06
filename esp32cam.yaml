@@ -12,16 +12,30 @@ esp32_camera:
   href_pin: GPIO23
   pixel_clock_pin: GPIO22
   power_down_pin: GPIO32
-  resolution: ${esp32cam_resolution} # Possible values: 400x296, 640x480, 800x600, 1024x768, 1280x1024, 1600x1200
-  jpeg_quality: ${esp32cam_jpeg_quality}                   # values from 10 to 63 (10: best, 63: worst)
-  contrast: ${esp32cam_contrast}                        # values from -2 to 2
-  brightness: ${esp32cam_brightness}                      # values from -2 to 2
-  saturation: ${esp32cam_saturation}                      # values from -2 to 2
-  idle_framerate: ${esp32cam_custom_idle_framerate}  # set to "0" to turn off idle mode
+  resolution: ${esp32cam_resolution}                        # Possible values: 400x296, 640x480, 800x600, 1024x768, 1280x1024, 1600x1200
+  jpeg_quality: ${esp32cam_jpeg_quality}                    # values from 10 to 63 (10: best, 63: worst)
+  contrast: ${esp32cam_contrast}                            # values from -2 to 2
+  brightness: ${esp32cam_brightness}                        # values from -2 to 2
+  saturation: ${esp32cam_saturation}                        # values from -2 to 2
+  idle_framerate: ${esp32cam_custom_idle_framerate}         # set to "0" to turn off idle mode
   vertical_flip: ${esp32cam_vertical_flip}
   horizontal_mirror: ${esp32cam_horizontal_mirror}
   max_framerate: ${esp32cam_max_framerate}
   test_pattern: false
+  aec_mode: ${esp32cam_aec_mode}                            # auto / manual
+  aec_value: ${esp32cam_aec_value}                          # The Exposure value to apply to the picture (when aec_mode is set to manual), from 0 to 1200. Defaults to 300.
+  ae_level: ${esp32cam_ae_level}                            # The auto exposure level to apply to the picture (when aec_mode is set to auto), from -2 to 2. Defaults to 0.
+  agc_mode: ${esp32cam_agc_mode}                            # auto / manual
+  agc_value: ${esp32cam_agc_value}                          # The gain value to apply to the picture (when aec_mode is set to manual), from 0 to 30. Defaults to 0.
+  agc_gain_ceiling: ${esp32cam_agc_gain_ceiling}                     # The maximum gain allowed, when agc_mode is set to auto. This parameter seems act as “ISO” setting. Defaults to 2x.
+                                                            # 2x: Camera is less sensitive, picture is clean (without visible noise)
+                                                            # 4x
+                                                            # 8x
+                                                            # 16x
+                                                            # 32x
+                                                            # 64x
+                                                            # 128x: Camera is more sensitive, but picture contain lot of noise
+
 
 switch:
   - platform: gpio
